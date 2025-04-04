@@ -16,7 +16,8 @@ private:
                                         85'229ul, 172'933ul, 351'061ul, 712'697ul, 1'447'153ul, 2'938'679ul};
 
    // define the member variables you need for your solution here
-   std::vector<std::list<int>> _buckets;
+   std::vector<std::list<std::list<int>::iterator>> _buckets;
+   std::list<int> _elements;
    std::size_t _numElements;
    float _maxLoadFactor;
    std::size_t _currentBucketCount;
@@ -27,27 +28,7 @@ private:
 public:
    // we include this line to ensure compilation with the level 2 signatures
    // you can change the way Iterator is implemented if you want
-   // class Iterator
-   // {
-   // private:
-   //    std::vector<std::list<int>>* _buckets;
-   //    std::size_t _bucketIndex;
-   //    std::list<int>::iterator _listIt;
-      
-   //    void goToNextBucket();
-
-   // public:
-   //    Iterator(std::vector<std::list<int>>*, std::size_t);
-   //    Iterator(std::vector<std::list<int>>*, std::size_t, std::list<int>::iterator);
-
-      
-   //    // Operator overloads
-   //    int& operator*() const;
-   //    Iterator &operator++();
-   //    Iterator operator++(int);
-   //    bool operator!=(const Iterator&);
-   //    bool operator==(const Iterator&);
-   // };
+   using Iterator = std::list<int>::iterator;
 
    //*** Constructors, Destructor, Assignment
 

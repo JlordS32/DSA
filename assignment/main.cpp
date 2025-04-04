@@ -1,19 +1,16 @@
 #include <iostream>
+#include <vector>
 #include "hash.cpp"
 
 int main() {
    HashSet hs;
+   
+   std::vector<int> repeatedNumbers {5, 32, 5, -20, -20, 32, 5};
 
-   hs.insert(10);
-   hs.insert(20);
-   hs.insert(14);
-   hs.insert(12);
-
-   for (auto it = hs.begin(); it != hs.end(); ++it) {
-      std::cout << *it << std::endl;
+   for (int x : repeatedNumbers) {
+      hs.insert(x);
    }
-
-   std::cout << "Hello";
+   std::cout << hs.size();
 
    return 0;
 }

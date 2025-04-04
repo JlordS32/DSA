@@ -7,93 +7,13 @@ const int INIT_IDXSIZE = 0;
 
 HashSet::Iterator HashSet::begin()
 {
-   return Iterator(&_buckets, 0);
+   return this->_elements.begin();
 }
 
 HashSet::Iterator HashSet::end()
 {
-   return Iterator(&_buckets, _buckets.size());
+   return this->_elements.end();
 }
-
-// HashSet::Iterator::Iterator(std::vector<std::list<int>> *buckets, std::size_t bucketIndex)
-//     : _buckets(buckets),
-//       _bucketIndex(bucketIndex)
-// {
-//    if (_bucketIndex < _buckets->size())
-//       _listIt = (*_buckets)[_bucketIndex].begin();
-//    goToNextBucket();
-// }
-
-// HashSet::Iterator::Iterator(std::vector<std::list<int>> *buckets, std::size_t bucketIndex, std::list<int>::iterator it)
-//     : _buckets(buckets),
-//       _bucketIndex(bucketIndex),
-//       _listIt(it)
-// {
-// }
-
-// void HashSet::Iterator::goToNextBucket()
-// {
-//    while (_bucketIndex < _buckets->size())
-//    {
-//       // Get bucket
-//       auto& bucket = (*_buckets)[_bucketIndex];
-
-//       // At this point, we have found the bucket, so we return.
-//       if (_listIt != bucket.end()) // not empty
-//          return;
-
-//       // Move to next bucket
-//       // and assign the iterator the beginning of the next bucket.
-//       _bucketIndex++;
-//       if (_bucketIndex < _buckets->size())
-//       {
-//          _listIt = (*_buckets)[_bucketIndex].begin();
-//       }
-//    }
-// }
-
-// int &HashSet::Iterator::operator*() const
-// {
-//    return *_listIt;
-// }
-
-// HashSet::Iterator &HashSet::Iterator::operator++()
-// {
-//    ++_listIt;
-//    goToNextBucket();
-//    return *this;
-// }
-
-// HashSet::Iterator HashSet::Iterator::operator++(int)
-// {
-//    Iterator temp = *this;
-//    ++(*this);
-//    return temp;
-// }
-
-// bool HashSet::Iterator::operator!=(const Iterator &other)
-// {
-//    return _bucketIndex != other._bucketIndex;
-// }
-
-// bool HashSet::Iterator::operator==(const Iterator &other)
-// {
-//    return _bucketIndex == other._bucketIndex;
-// }
-
-// // HashSet::Iterator HashSet::find(int key)
-// // {
-// //    std::size_t index = hash(key);
-// //    auto &bucket = _buckets[index];
-
-// //    for (auto it = bucket.begin(); it != bucket.end(); it++) {
-// //       if (*it == key) {
-// //          return Iterator(&_buckets, index, it);
-// //       }
-// //    }
-
-// //    return end();
-// // }
 
 HashSet::HashSet() : _buckets(sizes[INIT_IDXSIZE]),
                      _numElements(0),
@@ -150,29 +70,30 @@ void HashSet::insert(int key)
       rehash(newSize);
    }
 
-   // Get bucket based on hash value.
+   // We insert the value first into our contiguous list.
+   _elements.push_back(key);
+   auto it = std::prev(_elements.end());
+
+   // Get bucket using hash value as the index.
    std::size_t index = hash(key);
-   auto &bucket = _buckets[index];
+   // Insert into the selected bucket.
+   _buckets[index].push_back(it);
 
-   // Push item into that bucket.
-   bucket.push_back(key);
-
-   // Increment current number of elements.
+   // Increment the number of elements.
    _numElements++;
 }
 
 bool HashSet::contains(int key) const
 {
-
    // Get bucket using hash value as the index.
    std::size_t index = hash(key);
    auto &bucket = _buckets[index];
 
    // Iterate through the selected bucket
    // and check if item exists.
-   for (auto &item : bucket)
+   for (const auto &it : bucket)
    {
-      if (item == key)
+      if (*it == key)
       {
          return true;
       }
@@ -197,43 +118,81 @@ void HashSet::erase(int key)
    {
       // If found, simply remove the item on the bucket
       // and decrement the number of elements, then return.
-      if (*it == key)
+      if (*(*it) == key)
       {
+         _elements.erase(*it);
          bucket.erase(it);
          _numElements--;
-         return;
+         break;
       }
    }
+
+   return;
 }
 
-// HashSet::Iterator HashSet::erase(HashSet::Iterator it)
-// {
-//    std::ignore = it;
-// }
+HashSet::Iterator HashSet::find(int key)
+{
+   if (!contains(key))
+      return _elements.end();
+
+   std::size_t index = hash(key);
+   auto &bucket = _buckets[index];
+
+   for (auto it = bucket.begin(); it != bucket.end(); it++)
+   {
+      if (*(*it) == key)
+      {
+         return *it;
+      }
+   }
+
+   return _elements.end();
+}
+
+HashSet::Iterator HashSet::erase(HashSet::Iterator it)
+{
+   if (it == _elements.end())
+      return it;
+
+   int key = *it;
+
+   // Get bucket
+   std::size_t index = hash(key);
+   auto &bucket = _buckets[index];
+
+   // Iterate through the bucket
+   for (auto it = bucket.begin(); it != bucket.end(); it++)
+   {
+      // If found, simply remove the item on the bucket
+      // and decrement the number of elements, then return.
+      if (*(*it) == key)
+      {
+         bucket.erase(it);
+         break;
+      }
+   }
+
+   auto nextIt = _elements.erase(it);
+   _numElements--;
+}
 
 void HashSet::rehash(std::size_t newSize)
 {
    // Instantiate a new bucket of new size.
-   std::vector<std::list<int>> newBuckets(newSize);
+   std::vector<std::list<std::list<int>::iterator>> newBuckets(newSize);
 
    // We simply copy the stuff over from the old buckets
    // to the new buckets by getting a new index for each
    // items on the bucket.
-   for (const auto &bucket : _buckets)
+   for (auto it = _elements.begin(); it != _elements.end(); it++)
    {
-      for (int key : bucket)
-      {
-         std::size_t newIndex = hash(key, newSize);
-         auto &newBucket = newBuckets[newIndex];
-         newBucket.push_back(key);
-      }
+      std::size_t newIndex = hash(*it, newSize);
+      newBuckets[newIndex].push_back(it);
    }
 
    // We then assign the value of newBackets
    // to our member variables `_buckets`.
    this->_buckets = newBuckets;
-
-   // Make sure to also not forget this.
    this->_currentBucketCount = newSize;
 }
 
