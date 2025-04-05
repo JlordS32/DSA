@@ -174,6 +174,8 @@ HashSet::Iterator HashSet::erase(HashSet::Iterator it)
 
    auto nextIt = _elements.erase(it);
    _numElements--;
+   return nextIt;
+   
 }
 
 void HashSet::rehash(std::size_t newSize)
@@ -184,10 +186,16 @@ void HashSet::rehash(std::size_t newSize)
    // We simply copy the stuff over from the old buckets
    // to the new buckets by getting a new index for each
    // items on the bucket.
-   for (auto it = _elements.begin(); it != _elements.end(); it++)
+   for (auto it = _buckets.begin(); it != _buckets.end(); it++)
    {
-      std::size_t newIndex = hash(*it, newSize);
-      newBuckets[newIndex].push_back(it);
+      if (!(*it).empty())
+      {
+         for (auto &item : *it)
+         {
+            std::size_t newIndex = hash(*item, newSize);
+            newBuckets[newIndex].push_back(item);
+         }
+      }
    }
 
    // We then assign the value of newBackets
