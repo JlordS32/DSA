@@ -39,6 +39,7 @@ public:
   //*** Core Level 2 functionality
 
   Iterator find(int key);
+  Iterator find(int key) const;
 
   Iterator erase(Iterator it);
 
@@ -84,9 +85,8 @@ private:
     85'229ul, 172'933ul, 351'061ul, 712'697ul, 1'447'153ul, 2'938'679ul};
 
   // define the member variables you need for your solution here
-  std::vector<std::list<Iterator>> _buckets;
+  Iterator* _buckets;
   std::list<int> _elements;
-
   std::size_t _numElements;
   float _maxLoadFactor;
   std::size_t _currentBucketCount;
