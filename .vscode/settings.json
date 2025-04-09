@@ -83,6 +83,8 @@
       "sstream": "cpp",
       "stop_token": "cpp",
       "thread": "cpp",
-      "cinttypes": "cpp"
+      "cinttypes": "cpp",
+      "chrono": "cpp",
+      "iomanip": "cpp"
    }
 }

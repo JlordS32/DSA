@@ -1,42 +1,20 @@
 #include <iostream>
-#include <vector>
+#include <list>
 
-void swap(int& a, int& b) {
-   int temp = a;
-   a = b;
-   b = temp;
-}
+int main() {
+    std::list<int> myList = {10, 20, 30, 40, 50};
 
-template <typename T>
-void bubbleSort(std::vector<T>& arr) {
-   for (int i = 0; i < arr.size() - 1; i++) {
-      for (int j = 0; j < arr.size() - i - 1; j++) {
-         if (arr.at(j) > arr.at(j + 1)) {
-            swap(arr.at(j), arr.at(j + 1));
-         }
-      }
-   }
-}
+    auto it40 = std::next(myList.begin(), 3); // points to 40
+    auto it50 = std::next(myList.begin(), 4); // points to 50
 
-template <typename T>
-void bubbleSort(T arr[]) {
-   for (int i = 0; i < sizeof(arr) / sizeof(arr[0]) - 1; i++) {
-      for (int j = 0; j < sizeof(arr) / sizeof(arr[0]) - i - 1; j++) {
-         if (arr[j] > arr[j + 1]) {
-            swap(arr[j], arr[j + 1]);
-         }
-      }
-   }
-}
+    // Move 50 before the beginning
+    myList.splice(std::next(myList.begin()), myList, it40);
+    myList.splice(std::next(myList.begin()), myList, it50);
+    // Move 40 before the beginning
 
-int main()
-{
-   std::vector<int> nums = {2, 3, 5, 102, 53};
-   bubbleSort(nums);
+    std::cout << "After moving 40 and 50 to the front:\n";
+    for (int x : myList) std::cout << x << " ";
+    std::cout << "\n";
 
-   for (int x : nums) {
-      std::cout << x << " ";
-   }
-
-   return 0;
+    return 0;
 }
