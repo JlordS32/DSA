@@ -51,8 +51,21 @@ private:
       return succ;
    }
 
+   void destroy(Node *node)
+   {
+      if (!node)
+         return;
+      destroy(node->left);
+      destroy(node->right);
+      delete node;
+   }
+
 public:
    BST() : root(nullptr) {}
+   ~BST()
+   {
+      destroy(root);
+   }
 
    void insert(int value)
    {
@@ -159,6 +172,33 @@ public:
       print(node->left);
       std::cout << node->value << " ";
       print(node->right);
+   }
+
+   void preorder(Node *node)
+   {
+      if (node == nullptr)
+         return;
+      std::cout << node->value << " ";
+      preorder(node->left);
+      preorder(node->right);
+   }
+
+   void inorder(Node *node)
+   {
+      if (node == nullptr)
+         return;
+      inorder(node->left);
+      std::cout << node->value << " ";
+      inorder(node->right);
+   }
+
+   void postorder(Node *node)
+   {
+      if (node == nullptr)
+         return;
+      postorder(node->left);
+      postorder(node->right);
+      std::cout << node->value << " ";
    }
 
    void find(int key) { find(root, key); }
