@@ -204,6 +204,9 @@ public:
    void find(int key) { find(root, key); }
    void remove(int key) { remove(root, key); }
    void print() { print(root); }
+   void preorder() { preorder(root); }
+   void inorder() { inorder(root); }
+   void postorder() { postorder(root); }
 };
 
 int main()
@@ -221,5 +224,13 @@ int main()
    tree.remove(4);
 
    tree.print();
+   std::cout << std::endl;
+   tree.preorder();
+   std::cout << std::endl;
+
+   tree.inorder();
+   std::cout << std::endl;
+
+   tree.postorder();
    return 0;
 }
