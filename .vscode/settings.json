@@ -86,5 +86,6 @@
       "cinttypes": "cpp",
       "chrono": "cpp",
       "iomanip": "cpp"
-   }
+   },
+   "cmake.sourceDirectory": "C:/Users/jlord/OneDrive/Documents/Programming/DSA/assignment"
 }

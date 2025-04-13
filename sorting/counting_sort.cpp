@@ -1,32 +1,7 @@
 #include <vector>
 #include <algorithm>
+#include <iostream>
 #include <map>
-
-// void countingSort(std::vector<int> &arr)
-// {
-//    if (arr.empty())
-//       return;
-
-//    int max = *std::max_element(arr.begin(), arr.end());
-//    int min = *std::min_element(arr.begin(), arr.end());
-
-//    std::vector<int> count(max - min + 1, 0);
-
-//    for (int x : arr)
-//    {
-//       count[x - min]++;
-//    }
-
-//    int index = 0;
-//    for (int i = 0; i <= count.size(); i++)
-//    {
-//       while (count[i] > 0)
-//       {
-//          arr[index++] = i + min;
-//          count[i]--;
-//       }
-//    }
-// };
 
 void countingSort(std::vector<int> &arr)
 {
@@ -39,22 +14,34 @@ void countingSort(std::vector<int> &arr)
       count[x]++;
    }
    
-   auto prev = count.begin(); // Starting element
-   auto it = std::next(prev); // Next element
-
-   while (it != count.end()) {
-      it->second += prev->second;
-      
-      // Point to next
-      prev++;
+   auto it = count.begin();
+   while (it != std::prev(count.end())) {
+      std::next(it)->second += it->second;
       it++;
    }
 
    std::vector<int> sorted(arr.size());
-   for (int i = arr.size() - 1; i >= 0; i--) {
-      sorted[count[arr[i]] - 1] = arr[i];
-      count[arr[i]]--;
+   for (int i = 0; i < sorted.size(); i++) {
+      sorted[--count[arr[i]]] = arr[i];
    }
 
    arr = sorted;
+}
+
+int main() {
+   std::vector v = {8, 2, 1, 9, 8, 1, 2, 5};
+   for (int num : v) {
+      std::cout << num << " ";
+   } 
+
+   std::cout << std::endl;
+
+   countingSort(v);
+
+   for (int num : v) {
+      std::cout << num << " ";
+   }
+
+   return 0;
+
 }

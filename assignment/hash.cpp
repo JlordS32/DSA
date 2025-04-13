@@ -57,7 +57,8 @@ std::size_t HashSet::hash(int key, std::size_t bucketCount = 0) const
 
 HashSet &HashSet::operator=(HashSet other)
 {
-   if (this == &other) return *this;
+   if (this == &other)
+      return *this;
 
    // Clean up existing data
    delete[] _buckets;
@@ -75,11 +76,10 @@ HashSet &HashSet::operator=(HashSet other)
    for (std::size_t i = 0; i < _currentBucketCount; ++i)
       _buckets[i] = _elements.end();
 
-   for (const auto& val : other._elements)
+   for (const auto &val : other._elements)
       insert(val); // reuses your existing insert()
 
    return *this;
-
 }
 
 HashSet::~HashSet()
@@ -105,7 +105,7 @@ void HashSet::insert(int key)
    auto bucket = this->_buckets[index];
 
    // Since we assume that each bucket has an initial value of _elements.end().
-   // we can insert values into _elements.
+   // we can insert values into _elements from .
    auto it = this->_elements.insert(bucket, key);
    this->_numElements++;
    this->_buckets[index] = it;
@@ -125,7 +125,7 @@ bool HashSet::contains(int key) const
          return true;
       bucket++;
    }
-  
+
    // Return false for fallback.
    return false;
 }
@@ -201,8 +201,10 @@ void HashSet::rehash()
       // If head
       if (newBuckets[newIndex] == this->_elements.end())
          newBuckets[newIndex] = it;
+
       else
       {
+
          // Simply re-order, such that the new elements is on the front.
          // E.g the new element is now the head.
          _elements.splice(newBuckets[newIndex], _elements, it);
