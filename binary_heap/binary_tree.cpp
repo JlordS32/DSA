@@ -221,6 +221,5 @@ int main()
    tree.remove(4);
 
    tree.print();
-
    return 0;
 }
