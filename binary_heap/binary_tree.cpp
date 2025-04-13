@@ -152,31 +152,35 @@ public:
       remove(target->right, succ->value);
    }
 
+   void print(Node *node)
+   {
+      if (node == nullptr)
+         return;
+      print(node->left);
+      std::cout << node->value << " ";
+      print(node->right);
+   }
+
+   void find(int key) { find(root, key); }
    void remove(int key) { remove(root, key); }
+   void print() { print(root); }
 };
 
 int main()
 {
    BST tree;
 
-   for (int i = 0; i < 10; i++) {
+   for (int i = 0; i < 10; i++)
+   {
       tree.insert(i);
    }
-
-   std::cout << tree.contains(3) << std::endl;
-   std::cout << tree.contains(1) << std::endl;
-   std::cout << tree.contains(2) << std::endl;
-   std::cout << tree.contains(4) << std::endl;
 
    tree.remove(3);
    tree.remove(1);
    tree.remove(2);
    tree.remove(4);
 
-   std::cout << tree.contains(3) << std::endl;
-   std::cout << tree.contains(1) << std::endl;
-   std::cout << tree.contains(2) << std::endl;
-   std::cout << tree.contains(4) << std::endl;
+   tree.print();
 
    return 0;
 }
