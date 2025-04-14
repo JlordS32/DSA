@@ -1,19 +1,26 @@
 #include <iostream>
 #include <list>
+#include <queue>
+#include <vector>
 
-int main() {
-    std::list<int> lst = {1, 2, 3, 4, 5};
+int main()
+{
+    std::vector<int> weights {45, 98, 21, 111, 32};
+    std::priority_queue<int> pq(weights.begin(), weights.end());
 
-    auto it = lst.begin();
-    while (it != lst.end()) {
-        if (*it % 2 == 0) {
-            // Move even numbers to front
-            lst.splice(lst.begin(), lst, it);
+    while (pq.size() > 1)
+    {
+        int x = pq.top();
+        pq.pop();
+        int y = pq.top();
+        pq.pop();
+
+        if (x != y)
+        {
+            pq.push(x - y);
         }
-
-        ++it; // ❌ Moves from a spliced position
     }
 
-    std::cout << "Buggy Version (undefined behavior): ";
-    for (int x : lst) std::cout << x << " ";
+    std::cout << (pq.empty() ? 0 : pq.top()) << std::endl;
+    return 0;
 }

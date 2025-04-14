@@ -51,9 +51,21 @@ public:
    {
       if (heap.empty())
          return;
-      std::swap(heap[0], heap[heap.size() - 1]);
+      for (auto it = heap.begin(); it != heap.end(); ++it)
+         std::cout << *it << " ";
+      std::cout << std::endl;
+      std::swap(*heap.begin(), *std::prev(heap.end()));
+      for (auto it = heap.begin(); it != heap.end(); ++it)
+         std::cout << *it << " ";
+      std::cout << std::endl;
       heap.pop_back();
+      for (auto it = heap.begin(); it != heap.end(); ++it)
+         std::cout << *it << " ";
+      std::cout << std::endl;
       sink(0);
+      for (auto it = heap.begin(); it != heap.end(); ++it)
+         std::cout << *it << " ";
+      std::cout << std::endl;
    }
 
    Iterator begin() { return heap.begin(); }
@@ -72,16 +84,7 @@ int main()
    h.insert(1);
    h.insert(6);
 
-   for (auto it = h.begin(); it != h.end(); ++it)
-      std::cout << *it << " ";
-
    h.remove_min();
-   h.remove_min();
-   h.remove_min();
-   std::cout << std::endl;
-
-   for (auto it = h.begin(); it != h.end(); ++it)
-      std::cout << *it << " ";
 
    return 0;
 }
