@@ -1,0 +1,21 @@
+#include "algorithm.hpp"
+
+template <typename T>
+void swap(T& a, T& b) {
+   int temp = a;
+   a = b;
+   b = temp;
+}
+
+template <typename Iterator>
+void bubble_sort(Iterator begin, Iterator end)
+{
+   for (Iterator i = begin; i != end; ++i) {
+      for (Iterator j = i + 1; j != end; ++j) {
+         if (*i > *j) {
+            swap(*i, *j);
+         }
+      }
+   }
+}
+
