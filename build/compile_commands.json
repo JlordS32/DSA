@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/jlord/OneDrive/Documents/Programming/DSA/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/test.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\test.dir\\main.cpp.obj -c C:\\Users\\jlord\\OneDrive\\Documents\\Programming\\DSA\\assignment\\main.cpp",
+  "file": "C:/Users/jlord/OneDrive/Documents/Programming/DSA/assignment/main.cpp",
+  "output": "CMakeFiles/test.dir/main.cpp.obj"
+}
+]
