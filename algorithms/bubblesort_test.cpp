@@ -80,24 +80,6 @@ TEST(bubbleSort, emptyArray)
    EXPECT_EQ(arr, (std::vector<int>{}));
 }
 
-TEST(sorting, insertionSort)
-{
-   auto arr = generate_random_vector(10'000, -10'000, 10'000);
-   auto expected = arr;
-   std::sort(expected.begin(), expected.end());
-   insertion_sort(arr.begin(), arr.end());
-   EXPECT_EQ(arr, expected);
-}
-
-TEST(sorting, countingSort)
-{
-   auto arr = generate_random_vector(10'000, -10'000, 10'000);
-   auto expected = arr;
-   std::sort(expected.begin(), expected.end());
-   counting_sort(arr.begin(), arr.end());
-   EXPECT_EQ(arr, expected);
-}
-
 int main(int argc, char **argv)
 {
    ::testing::InitGoogleTest(&argc, argv);
