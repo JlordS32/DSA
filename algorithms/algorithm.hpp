@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
-
-template<typename T>
-using Iterator = std::vector<T>::iterator;
-
+#pragma once
 template <typename T>
 void swap(T& a, T& b);
 
@@ -12,4 +7,3 @@ void bubble_sort(Iterator begin, Iterator end);
 
 template <typename Iterator>
 void insertion_sort(Iterator begin, Iterator end);
-
