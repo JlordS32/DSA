@@ -19,3 +19,15 @@ void bubble_sort(Iterator begin, Iterator end)
    }
 }
 
+template <typename Iterator>
+void insertion_sort(Iterator begin, Iterator end)
+{
+   for (Iterator i = begin; i != end; ++i) {
+      Iterator j = i;
+      while (j != begin && *j > *(j + 1)) {
+         swap(*j, *(j + 1));
+         --j;
+      }
+   }
+}
+
