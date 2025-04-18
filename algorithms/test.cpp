@@ -9,9 +9,15 @@ TEST(sorting, bubbleSort) {
    EXPECT_EQ(arr, std::vector<int>({1, 2, 3, 4, 5}));
 }
 
-TEST(sorting, insertion_sort) {
+TEST(sorting, insertionSort) {
    std::vector<int> arr = {5, 4, 3, 2, 1};
    insertion_sort(arr.begin(), arr.end());
+   EXPECT_EQ(arr, std::vector<int>({1, 2, 3, 4, 5}));
+}
+
+TEST(sorting, coutingSort) {
+   std::vector<int> arr = {5, 4, 3, 2, 1};
+   counting_sort(arr.begin(), arr.end());
    EXPECT_EQ(arr, std::vector<int>({1, 2, 3, 4, 5}));
 }
 
