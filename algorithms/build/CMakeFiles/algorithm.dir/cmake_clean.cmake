@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/algorithm.dir/test.cpp.obj"
-  "CMakeFiles/algorithm.dir/test.cpp.obj.d"
+  "CMakeFiles/algorithm.dir/tests/bubble_sort_test.cpp.obj"
+  "CMakeFiles/algorithm.dir/tests/bubble_sort_test.cpp.obj.d"
+  "CMakeFiles/algorithm.dir/tests/insertion_sort_test.cpp.obj"
+  "CMakeFiles/algorithm.dir/tests/insertion_sort_test.cpp.obj.d"
+  "CMakeFiles/algorithm.dir/tests/test_main.cpp.obj"
+  "CMakeFiles/algorithm.dir/tests/test_main.cpp.obj.d"
   "algorithm.exe"
   "algorithm.exe.manifest"
   "algorithm.pdb"

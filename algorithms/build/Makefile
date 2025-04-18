@@ -128,29 +128,77 @@ algorithm/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/build
 .PHONY : algorithm/fast
 
-test.obj: test.cpp.obj
-.PHONY : test.obj
+tests/bubble_sort_test.obj: tests/bubble_sort_test.cpp.obj
+.PHONY : tests/bubble_sort_test.obj
 
 # target to build an object file
-test.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/test.cpp.obj
-.PHONY : test.cpp.obj
+tests/bubble_sort_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/bubble_sort_test.cpp.obj
+.PHONY : tests/bubble_sort_test.cpp.obj
 
-test.i: test.cpp.i
-.PHONY : test.i
+tests/bubble_sort_test.i: tests/bubble_sort_test.cpp.i
+.PHONY : tests/bubble_sort_test.i
 
 # target to preprocess a source file
-test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/test.cpp.i
-.PHONY : test.cpp.i
+tests/bubble_sort_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/bubble_sort_test.cpp.i
+.PHONY : tests/bubble_sort_test.cpp.i
 
-test.s: test.cpp.s
-.PHONY : test.s
+tests/bubble_sort_test.s: tests/bubble_sort_test.cpp.s
+.PHONY : tests/bubble_sort_test.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/test.cpp.s
-.PHONY : test.cpp.s
+tests/bubble_sort_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/bubble_sort_test.cpp.s
+.PHONY : tests/bubble_sort_test.cpp.s
+
+tests/insertion_sort_test.obj: tests/insertion_sort_test.cpp.obj
+.PHONY : tests/insertion_sort_test.obj
+
+# target to build an object file
+tests/insertion_sort_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/insertion_sort_test.cpp.obj
+.PHONY : tests/insertion_sort_test.cpp.obj
+
+tests/insertion_sort_test.i: tests/insertion_sort_test.cpp.i
+.PHONY : tests/insertion_sort_test.i
+
+# target to preprocess a source file
+tests/insertion_sort_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/insertion_sort_test.cpp.i
+.PHONY : tests/insertion_sort_test.cpp.i
+
+tests/insertion_sort_test.s: tests/insertion_sort_test.cpp.s
+.PHONY : tests/insertion_sort_test.s
+
+# target to generate assembly for a file
+tests/insertion_sort_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/insertion_sort_test.cpp.s
+.PHONY : tests/insertion_sort_test.cpp.s
+
+tests/test_main.obj: tests/test_main.cpp.obj
+.PHONY : tests/test_main.obj
+
+# target to build an object file
+tests/test_main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/test_main.cpp.obj
+.PHONY : tests/test_main.cpp.obj
+
+tests/test_main.i: tests/test_main.cpp.i
+.PHONY : tests/test_main.i
+
+# target to preprocess a source file
+tests/test_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/test_main.cpp.i
+.PHONY : tests/test_main.cpp.i
+
+tests/test_main.s: tests/test_main.cpp.s
+.PHONY : tests/test_main.s
+
+# target to generate assembly for a file
+tests/test_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/test_main.cpp.s
+.PHONY : tests/test_main.cpp.s
 
 # Help Target
 help:
@@ -161,9 +209,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... algorithm
-	@echo ... test.obj
-	@echo ... test.i
-	@echo ... test.s
+	@echo ... tests/bubble_sort_test.obj
+	@echo ... tests/bubble_sort_test.i
+	@echo ... tests/bubble_sort_test.s
+	@echo ... tests/insertion_sort_test.obj
+	@echo ... tests/insertion_sort_test.i
+	@echo ... tests/insertion_sort_test.s
+	@echo ... tests/test_main.obj
+	@echo ... tests/test_main.i
+	@echo ... tests/test_main.s
 .PHONY : help
 
 
