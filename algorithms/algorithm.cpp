@@ -1,5 +1,5 @@
 #include "algorithm.hpp"
-#include <unordered_map>
+#include <map>
 #include <iostream>
 #include <vector>
 
@@ -64,10 +64,10 @@ void insertion_sort(Iterator begin, Iterator end)
    }
 }
 
-template <typename Iterator, typename T>
+template <typename Iterator>
 void counting_sort(Iterator begin, Iterator end)
 {
-   std::unordered_map<T, int> count;
+   std::map<int, int> count;
 
    // Calculate the number of occurrences of each element
    for (Iterator i = begin; i != end; ++i) {
@@ -82,7 +82,7 @@ void counting_sort(Iterator begin, Iterator end)
    }
 
    // Build the sorted array
-   std::vector<T> sorted(end - begin);
+   std::vector<int> sorted(end - begin);
    for (Iterator i = end - 1; i != begin - 1; --i) {
       sorted[--count[*i]] = *i;
    }
