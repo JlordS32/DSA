@@ -3,7 +3,7 @@
 #include "test_utils.hpp"
 
 // ------------------------------
-// BUBBLE SORT TESTS
+// INSERTION SORT TESTS
 // ------------------------------
 
 TEST(insertionSort, randomArray)
