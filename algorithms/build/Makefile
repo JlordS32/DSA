@@ -152,6 +152,30 @@ tests/bubble_sort_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/bubble_sort_test.cpp.s
 .PHONY : tests/bubble_sort_test.cpp.s
 
+tests/counting_sort_test.obj: tests/counting_sort_test.cpp.obj
+.PHONY : tests/counting_sort_test.obj
+
+# target to build an object file
+tests/counting_sort_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/counting_sort_test.cpp.obj
+.PHONY : tests/counting_sort_test.cpp.obj
+
+tests/counting_sort_test.i: tests/counting_sort_test.cpp.i
+.PHONY : tests/counting_sort_test.i
+
+# target to preprocess a source file
+tests/counting_sort_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/counting_sort_test.cpp.i
+.PHONY : tests/counting_sort_test.cpp.i
+
+tests/counting_sort_test.s: tests/counting_sort_test.cpp.s
+.PHONY : tests/counting_sort_test.s
+
+# target to generate assembly for a file
+tests/counting_sort_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/counting_sort_test.cpp.s
+.PHONY : tests/counting_sort_test.cpp.s
+
 tests/insertion_sort_test.obj: tests/insertion_sort_test.cpp.obj
 .PHONY : tests/insertion_sort_test.obj
 
@@ -212,6 +236,9 @@ help:
 	@echo ... tests/bubble_sort_test.obj
 	@echo ... tests/bubble_sort_test.i
 	@echo ... tests/bubble_sort_test.s
+	@echo ... tests/counting_sort_test.obj
+	@echo ... tests/counting_sort_test.i
+	@echo ... tests/counting_sort_test.s
 	@echo ... tests/insertion_sort_test.obj
 	@echo ... tests/insertion_sort_test.i
 	@echo ... tests/insertion_sort_test.s

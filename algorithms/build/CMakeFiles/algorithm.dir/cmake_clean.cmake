@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/algorithm.dir/tests/bubble_sort_test.cpp.obj"
   "CMakeFiles/algorithm.dir/tests/bubble_sort_test.cpp.obj.d"
+  "CMakeFiles/algorithm.dir/tests/counting_sort_test.cpp.obj"
+  "CMakeFiles/algorithm.dir/tests/counting_sort_test.cpp.obj.d"
   "CMakeFiles/algorithm.dir/tests/insertion_sort_test.cpp.obj"
   "CMakeFiles/algorithm.dir/tests/insertion_sort_test.cpp.obj.d"
   "CMakeFiles/algorithm.dir/tests/test_main.cpp.obj"

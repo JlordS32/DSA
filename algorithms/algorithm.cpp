@@ -67,6 +67,7 @@ void insertion_sort(Iterator begin, Iterator end)
 template <typename Iterator>
 void counting_sort(Iterator begin, Iterator end)
 {
+   if (begin == end) return;  
    std::map<int, int> count;
 
    // Calculate the number of occurrences of each element

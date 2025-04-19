@@ -13,6 +13,7 @@ link_directories("C:/gtest/googletest/build/lib")
 add_executable(algorithm 
    ./tests/bubble_sort_test.cpp 
    ./tests/insertion_sort_test.cpp
+   ./tests/counting_sort_test.cpp
    ./tests/test_main.cpp
 )
 
