@@ -8,5 +8,5 @@ void bubble_sort(Iterator begin, Iterator end);
 template <typename Iterator>
 void insertion_sort(Iterator begin, Iterator end);
 
-template <typename Iterator>
-void counting_sort(Iterator begin, Iterator end);
+template <typename Iterator, typename KeyFunc>
+void counting_sort(Iterator begin, Iterator end, KeyFunc keyFunc);   
