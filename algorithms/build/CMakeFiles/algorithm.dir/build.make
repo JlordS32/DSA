@@ -116,11 +116,26 @@ CMakeFiles/algorithm.dir/tests/counting_sort_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithm.dir/tests/counting_sort_test.cpp.s"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jlord\OneDrive\Documents\Programming\DSA\algorithms\tests\counting_sort_test.cpp -o CMakeFiles\algorithm.dir\tests\counting_sort_test.cpp.s
 
+CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.obj: CMakeFiles/algorithm.dir/flags.make
+CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.obj: CMakeFiles/algorithm.dir/includes_CXX.rsp
+CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.obj: C:/Users/jlord/OneDrive/Documents/Programming/DSA/algorithms/tests/radix_sort_test.cpp
+CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.obj: CMakeFiles/algorithm.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\jlord\OneDrive\Documents\Programming\DSA\algorithms\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.obj -MF CMakeFiles\algorithm.dir\tests\radix_sort_test.cpp.obj.d -o CMakeFiles\algorithm.dir\tests\radix_sort_test.cpp.obj -c C:\Users\jlord\OneDrive\Documents\Programming\DSA\algorithms\tests\radix_sort_test.cpp
+
+CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\jlord\OneDrive\Documents\Programming\DSA\algorithms\tests\radix_sort_test.cpp > CMakeFiles\algorithm.dir\tests\radix_sort_test.cpp.i
+
+CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jlord\OneDrive\Documents\Programming\DSA\algorithms\tests\radix_sort_test.cpp -o CMakeFiles\algorithm.dir\tests\radix_sort_test.cpp.s
+
 CMakeFiles/algorithm.dir/tests/test_main.cpp.obj: CMakeFiles/algorithm.dir/flags.make
 CMakeFiles/algorithm.dir/tests/test_main.cpp.obj: CMakeFiles/algorithm.dir/includes_CXX.rsp
 CMakeFiles/algorithm.dir/tests/test_main.cpp.obj: C:/Users/jlord/OneDrive/Documents/Programming/DSA/algorithms/tests/test_main.cpp
 CMakeFiles/algorithm.dir/tests/test_main.cpp.obj: CMakeFiles/algorithm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\jlord\OneDrive\Documents\Programming\DSA\algorithms\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/algorithm.dir/tests/test_main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\jlord\OneDrive\Documents\Programming\DSA\algorithms\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/algorithm.dir/tests/test_main.cpp.obj"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/algorithm.dir/tests/test_main.cpp.obj -MF CMakeFiles\algorithm.dir\tests\test_main.cpp.obj.d -o CMakeFiles\algorithm.dir\tests\test_main.cpp.obj -c C:\Users\jlord\OneDrive\Documents\Programming\DSA\algorithms\tests\test_main.cpp
 
 CMakeFiles/algorithm.dir/tests/test_main.cpp.i: cmake_force
@@ -136,6 +151,7 @@ algorithm_OBJECTS = \
 "CMakeFiles/algorithm.dir/tests/bubble_sort_test.cpp.obj" \
 "CMakeFiles/algorithm.dir/tests/insertion_sort_test.cpp.obj" \
 "CMakeFiles/algorithm.dir/tests/counting_sort_test.cpp.obj" \
+"CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.obj" \
 "CMakeFiles/algorithm.dir/tests/test_main.cpp.obj"
 
 # External object files for target algorithm
@@ -144,12 +160,13 @@ algorithm_EXTERNAL_OBJECTS =
 algorithm.exe: CMakeFiles/algorithm.dir/tests/bubble_sort_test.cpp.obj
 algorithm.exe: CMakeFiles/algorithm.dir/tests/insertion_sort_test.cpp.obj
 algorithm.exe: CMakeFiles/algorithm.dir/tests/counting_sort_test.cpp.obj
+algorithm.exe: CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.obj
 algorithm.exe: CMakeFiles/algorithm.dir/tests/test_main.cpp.obj
 algorithm.exe: CMakeFiles/algorithm.dir/build.make
 algorithm.exe: CMakeFiles/algorithm.dir/linkLibs.rsp
 algorithm.exe: CMakeFiles/algorithm.dir/objects1.rsp
 algorithm.exe: CMakeFiles/algorithm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\jlord\OneDrive\Documents\Programming\DSA\algorithms\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable algorithm.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\jlord\OneDrive\Documents\Programming\DSA\algorithms\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable algorithm.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\algorithm.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

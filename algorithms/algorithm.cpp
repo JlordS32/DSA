@@ -25,16 +25,6 @@ void copy(Iterator begin, Iterator end, Iterator dest)
    }
 }
 
-template <typename T>
-void max(T a, T b) {
-   return a > b ? a : b;
-}
-
-template <typename T>
-void max(T a, T b) {
-   return a < b ? a : b;
-}
-
 template <typename Iterator>
 Iterator max_element(Iterator begin, Iterator end) {
    Iterator max = begin;
@@ -131,12 +121,18 @@ void counting_sort(Iterator begin, Iterator end, Func keyFunc)
 }
 
 template <typename Iterator>
+void counting_sort(Iterator begin, Iterator end)
+{
+   counting_sort(begin, end, [](auto x) { return x; });
+}
+
+template <typename Iterator>
 void radix_sort(Iterator begin, Iterator end)
 {
    if (begin == end)
       return;
 
-   int max = *std::max_element(begin, end);
+   int max = *::max_element(begin, end);
    for (int exp = 1; max / exp > 0; exp *= 10)
    {
       counting_sort(begin, end, [exp](int x)

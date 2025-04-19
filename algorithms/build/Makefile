@@ -200,6 +200,30 @@ tests/insertion_sort_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/insertion_sort_test.cpp.s
 .PHONY : tests/insertion_sort_test.cpp.s
 
+tests/radix_sort_test.obj: tests/radix_sort_test.cpp.obj
+.PHONY : tests/radix_sort_test.obj
+
+# target to build an object file
+tests/radix_sort_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.obj
+.PHONY : tests/radix_sort_test.cpp.obj
+
+tests/radix_sort_test.i: tests/radix_sort_test.cpp.i
+.PHONY : tests/radix_sort_test.i
+
+# target to preprocess a source file
+tests/radix_sort_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.i
+.PHONY : tests/radix_sort_test.cpp.i
+
+tests/radix_sort_test.s: tests/radix_sort_test.cpp.s
+.PHONY : tests/radix_sort_test.s
+
+# target to generate assembly for a file
+tests/radix_sort_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make CMakeFiles/algorithm.dir/tests/radix_sort_test.cpp.s
+.PHONY : tests/radix_sort_test.cpp.s
+
 tests/test_main.obj: tests/test_main.cpp.obj
 .PHONY : tests/test_main.obj
 
@@ -242,6 +266,9 @@ help:
 	@echo ... tests/insertion_sort_test.obj
 	@echo ... tests/insertion_sort_test.i
 	@echo ... tests/insertion_sort_test.s
+	@echo ... tests/radix_sort_test.obj
+	@echo ... tests/radix_sort_test.i
+	@echo ... tests/radix_sort_test.s
 	@echo ... tests/test_main.obj
 	@echo ... tests/test_main.i
 	@echo ... tests/test_main.s

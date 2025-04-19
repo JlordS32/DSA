@@ -3,23 +3,23 @@
 #include "test_utils.hpp"
 
 // ------------------------------
-// COUNTING SORT TESTS
+// RADIX SORT TESTS
 // ------------------------------
 
-TEST(countingSort, randomArray)
+TEST(radixSort, randomArray)
 {
-   auto arr = generate_random_vector(100'000, -100'000, 100'000);
+   auto arr = generate_random_vector(100'000, 0, 200'000);
    auto expected = arr;
    std::sort(expected.begin(), expected.end());
-   counting_sort(arr.begin(), arr.end());
+   radix_sort(arr.begin(), arr.end());
    EXPECT_EQ(arr, expected);
 }
 
-TEST(countingSort, reversedArray)
+TEST(radixSort, reversedArray)
 {
    std::vector<int> arr(10'000);
    std::iota(arr.rbegin(), arr.rend(), 1); // fills with 1000..1
-   counting_sort(arr.begin(), arr.end());
+   radix_sort(arr.begin(), arr.end());
 
    std::vector<int> expected(10'000);
    std::iota(expected.begin(), expected.end(), 1); // 1..1000
@@ -27,11 +27,11 @@ TEST(countingSort, reversedArray)
    EXPECT_EQ(arr, expected);
 }
 
-TEST(countingSort, alreadySorted)
+TEST(radixSort, alreadySorted)
 {
    std::vector<int> arr(10'000);
    std::iota(arr.begin(), arr.end(), 1); // fills with 1000..1
-   counting_sort(arr.begin(), arr.end());
+   radix_sort(arr.begin(), arr.end());
 
    std::vector<int> expected(10'000);
    std::iota(expected.begin(), expected.end(), 1); // 1..1000
@@ -39,30 +39,30 @@ TEST(countingSort, alreadySorted)
    EXPECT_EQ(arr, expected);
 }
 
-TEST(countingSort, allSame)
+TEST(radixSort, allSame)
 {
    std::vector<int> arr = {7, 7, 7, 7, 7};
-   counting_sort(arr.begin(), arr.end());
+   radix_sort(arr.begin(), arr.end());
    EXPECT_EQ(arr, (std::vector<int>{7, 7, 7, 7, 7}));
 }
 
-TEST(countingSort, negAndPos)
+TEST(radixSort, negAndPos)
 {
    std::vector<int> arr = {-3, 0, 2, -1, 5};
-   counting_sort(arr.begin(), arr.end());
+   radix_sort(arr.begin(), arr.end());
    EXPECT_EQ(arr, (std::vector<int>{-3, -1, 0, 2, 5}));
 }
 
-TEST(countingSort, singleElement)
+TEST(radixSort, singleElement)
 {
    std::vector<int> arr = {42};
-   counting_sort(arr.begin(), arr.end());
+   radix_sort(arr.begin(), arr.end());
    EXPECT_EQ(arr, (std::vector<int>{42}));
 }
 
-TEST(countingSort, emptyArray)
+TEST(radixSort, emptyArray)
 {
    std::vector<int> arr = {};
-   counting_sort(arr.begin(), arr.end());
+   radix_sort(arr.begin(), arr.end());
    EXPECT_EQ(arr, (std::vector<int>{}));
 }
