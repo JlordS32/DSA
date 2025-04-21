@@ -11,11 +11,11 @@ link_directories("C:/gtest/googletest/build/lib")
 # add_executable([Name it however you want] <Main file here || main.cpp>)
 # Example:
 add_executable(algorithm 
-   ./tests/bubble_sort_test.cpp 
-   ./tests/insertion_sort_test.cpp
-   ./tests/counting_sort_test.cpp
-   ./tests/radix_sort_test.cpp
    ./tests/test_main.cpp
+   ./tests/radix_sort_test.cpp
+   ./tests/counting_sort_test.cpp
+   ./tests/insertion_sort_test.cpp
+   ./tests/bubble_sort_test.cpp 
 )
 
 # target_link_libraries([Same name as above] gtest gtest_main pthread)
