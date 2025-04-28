@@ -8,9 +8,10 @@ class Graph
 private:
    int vertices;
    std::vector<std::list<int>> adjList;
+   std::vector<bool> visited;
 
 public:
-   Graph(int v) : vertices(v), adjList(v) {}
+   Graph(int v) : vertices(v), adjList(v), visited(v, false) {}
 
    void addEdge(int u, int v)
    {
@@ -48,12 +49,6 @@ public:
 
    void dfs(int node)
    {
-      std::vector<bool> visited(vertices, false);
-      dfsHelper(node, visited);
-   }
-
-   void dfsHelper(int node, std::vector<bool> &visited)
-   {
       visited[node] = true;
       std::cout << node << " ";
 
@@ -61,14 +56,15 @@ public:
       {
          if (!visited[neighbor])
          {
-            dfsHelper(neighbor, visited);
+            dfs(neighbor);
          }
       }
+
+      visited.clear();
    }
 
    void bfs(int start)
    {
-      std::vector<bool> visited(vertices, false);
       std::queue<int> q;
 
       int current = start;
@@ -91,6 +87,8 @@ public:
             }
          }
       }
+
+      visited.clear();
    }
 };
 
@@ -114,10 +112,5 @@ int main()
 
    std::cout << "Total degree: " << g.totalDegree() << std::endl;
    std::cout << "Total edges: " << g.numberOfEdges() << std::endl;
-
-   std::cout << "\nBFS: ";
-   g.bfs(0);
-   std::cout << "\nDFS: ";
-   g.dfs(0);
    return 0;
 }
