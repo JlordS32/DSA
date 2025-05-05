@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <list>
 #include <algorithm>
 
-using Iterator = std::vector<int>::iterator;
-
+template <typename Iterator>
 int maxProfit(Iterator begin, Iterator end)
 {
    if (end - begin <= 1)
@@ -17,6 +17,7 @@ int maxProfit(Iterator begin, Iterator end)
    return std::max({maxProfit(begin, mid), maxProfit(mid, end), profit});
 }
 
+template <typename Iterator>
 int binarySearch(Iterator begin, Iterator end, int target) {
    if (begin >= end) return -1;
    Iterator mid = begin + ((end - begin) / 2);
@@ -29,9 +30,10 @@ int binarySearch(Iterator begin, Iterator end, int target) {
 int main()
 {
    std::vector<int> prices = {23, 5, 2, 64, 10, 1, 100, 23};
+   std::list<int> prices2 = {23, 5, 2, 64, 10, 1, 100, 23};
    sort(prices.begin(), prices.end());
    
-   std::cout << binarySearch(prices.begin(), prices.end(), 233) << std::endl;
+   std::cout << binarySearch(prices2.begin(), prices2.end(), 233) << std::endl;
 
    return 0;
 }

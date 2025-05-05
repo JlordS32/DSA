@@ -85,7 +85,8 @@
       "thread": "cpp",
       "cinttypes": "cpp",
       "chrono": "cpp",
-      "iomanip": "cpp"
+      "iomanip": "cpp",
+      "ranges": "cpp"
    },
    "cmake.sourceDirectory": "C:/Users/jlord/OneDrive/Documents/Programming/DSA/assignment"
 }

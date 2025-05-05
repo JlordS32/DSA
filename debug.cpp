@@ -1,7 +1,10 @@
 #include <iostream>
 
-int main()
-{
-    std::cout << "Hello world\n";
-    return 0;
+consteval int cube(int x) {
+    return x * x * x;
+}
+
+int main() {
+    constexpr int result = cube(3);
+    std::cout << result << '\n'; 
 }
