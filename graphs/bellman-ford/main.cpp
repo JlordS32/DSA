@@ -1,46 +1,47 @@
 #include <iostream>
-#include <list>
-#include <vector>
-#include <queue>
+#include <limits>
+#include <algorithm>
+#include "../graph.hpp"
 
-class Graph
+const int MAX_INT = std::numeric_limits<int>::max();
+
+void bellmanFord(Graph &g, int source)
 {
-private:
-   int vertices;
-   bool isDirected;
-   std::vector<std::list<std::pair<int, int>>> adjList;
-   std::vector<bool> visited;
+   // Initialise a distance vector of size = number of vertices, with initial value = MAX_INT
+   std::vector<int> dist(g.getVertices(), MAX_INT);
 
-public:
-   Graph(int v, bool isDirected = false) : vertices(v), adjList(v), visited(v, false), isDirected(isDirected) {}
+   // We set the source distance to 0.
+   dist[source] = 0;
 
-   void addEdge(int u, int v, int w)
+   // For the outer loop: Loop about | V | - 1 times to relax all edges.
+   // This allows us to find all possible shortest paths
+   for (int i = 0; i < g.getVertices() - 1; i++)
    {
-      adjList[u].push_back({u, w});
 
-      if (!isDirected)
+      // Visit all edges for each vertex.
+      for (int u = 0; u < g.getVertices(); u++)
       {
-         adjList[v].push_back({u, w});
-      }
-   }
-
-   void print()
-   {
-      for (int i = 0; i < vertices; i++)
-      {
-         std::cout << i << ": ";
-         for (auto edge : adjList[i])
+         for (auto &edge : g.getAdjList()[u])
          {
-            std::cout << "(" << edge.first << ", " << edge.second << ") ";
+            int v = edge.first;
+            int weight = edge.second;
+            
+            if (dist[u] != MAX_INT && dist[u] + weight < dist[v])
+            {
+               dist[v] = dist[u] + weight;
+            }
          }
-         std::cout << std::endl;
       }
+   } 
+
+   // Print
+   for (int i = 0; i < dist.size(); i++) {
+      std::cout << i << ": " << dist[i] << std::endl;
    }
-};
+}
 
 int main()
 {
-
    Graph g(6, true);
 
    g.addEdge(0, 1, 8);
@@ -52,7 +53,7 @@ int main()
    g.addEdge(5, 4, -2);
    g.addEdge(4, 2, 1);
 
-   g.print();
+   bellmanFord(g, 0);
 
    return 0;
 }
