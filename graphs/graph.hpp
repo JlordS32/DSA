@@ -25,6 +25,18 @@ public:
       }
    }
 
+   void addVertex()
+   {
+      adjList.push_back({});
+      vertices++;
+   }
+
+   void removeEdgesFrom(int u)
+   {
+      adjList[u].clear();
+      vertices--;
+   }
+
    void print()
    {
       for (int i = 0; i < vertices; i++)
@@ -39,7 +51,7 @@ public:
    }
 
    int getVertices() { return vertices; }
-   std::vector<std::list<std::pair<int, int>>>& getAdjList() { return adjList; }
+   std::vector<std::list<std::pair<int, int>>> &getAdjList() { return adjList; }
 };
 
 #endif

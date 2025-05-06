@@ -43,6 +43,12 @@ std::vector<int> bellmanFord(Graph &g, int source)
       }
    }
 
+   std::cout << "Bellman Ford: "; 
+   for (int i = 0; i < dist.size(); i++)
+   {
+      std::cout << i << ": " << dist[i] << "\n";
+   }
+
    return dist;
 }
 
@@ -63,11 +69,8 @@ std::vector<int> dijkstras(Graph &g, int source)
       int current = pq.top().second;
       pq.pop();
 
-      for (auto edge : g.getAdjList()[current])
+      for (auto &[neighbor, weight] : g.getAdjList()[current])
       {
-         int neighbor = edge.first;
-         int weight = edge.second;
-
          if (dist[current] + weight < dist[neighbor])
          {
             dist[neighbor] = dist[current] + weight;
@@ -88,7 +91,6 @@ void johnson(Graph &g)
    // Add edge with a weight of 0 to every node.
    for (int i = 0; i < g.getVertices(); ++i)
    {
-      std::cout << i;
       g.addEdge(virtualNode, i, 0);
    }
 

@@ -24,33 +24,44 @@ void bellmanFord(Graph &g, int source)
          {
             int v = edge.first;
             int weight = edge.second;
-            
+
             if (dist[u] != MAX_INT && dist[u] + weight < dist[v])
             {
                dist[v] = dist[u] + weight;
             }
          }
       }
-   } 
+   }
+
+   for (int u = 0; u < g.getVertices(); u++)
+   {
+      for (auto &edge : g.getAdjList()[u])
+      {
+         int v = edge.first;
+         int weight = edge.second;
+
+         if (dist[u] != MAX_INT && dist[u] + weight < dist[v])
+         {
+            std::cout << "Negative weight cycle detected!" << std::endl;
+            return;
+         }
+      }
+   }
 
    // Print
-   for (int i = 0; i < dist.size(); i++) {
+   for (int i = 0; i < dist.size(); i++)
+   {
       std::cout << i << ": " << dist[i] << std::endl;
    }
 }
 
 int main()
 {
-   Graph g(6, true);
+   Graph g(3, true); // 3 nodes
 
-   g.addEdge(0, 1, 8);
-   g.addEdge(0, 2, 10);
-   g.addEdge(1, 3, 1);
-   g.addEdge(2, 5, 2);
-   g.addEdge(3, 2, -4);
-   g.addEdge(3, 5, -1);
-   g.addEdge(5, 4, -2);
-   g.addEdge(4, 2, 1);
+   g.addEdge(0, 1, 1);  // A → B
+   g.addEdge(1, 2, -1); // B → C
+   g.addEdge(2, 0, -1); // C → A
 
    bellmanFord(g, 0);
 
