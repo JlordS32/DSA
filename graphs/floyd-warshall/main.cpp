@@ -53,7 +53,7 @@ public:
          {
             for (int j = 0; j < vertices; j++)
             {
-               if (dist[i][k] != INF && dist[k][j] != INF && dist[i][j] > dist[i][k] + dist[k][j])
+               if (dist[i][j] > dist[i][k] + dist[k][j])
                {
                   dist[i][j] = dist[i][k] + dist[k][j];
                }

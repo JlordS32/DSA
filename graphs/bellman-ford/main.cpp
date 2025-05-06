@@ -17,7 +17,6 @@ void bellmanFord(Graph &g, int source)
    // This allows us to find all possible shortest paths
    for (int i = 0; i < g.getVertices() - 1; i++)
    {
-
       // Visit all edges for each vertex.
       for (int u = 0; u < g.getVertices(); u++)
       {
