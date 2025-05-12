@@ -16,7 +16,7 @@ TEST(RecursiveFibTest, MidInput)
 
 TEST(RecursiveFibTest, LargeInput)
 {
-   EXPECT_EQ(recursiveFib(20), 6765);
+   EXPECT_EQ(recursiveFib(50), 12586269025);
 }
 
 // Test suite for iterativeFib
@@ -33,7 +33,7 @@ TEST(IterativeFibTest, MidInput)
 
 TEST(IterativeFibTest, LargeInput)
 {
-   EXPECT_EQ(recursiveFib(20), 6765);
+   EXPECT_EQ(iterativeFib(50), 12586269025);
 }
 
 int main(int argc, char **argv)
