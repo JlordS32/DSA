@@ -36,7 +36,24 @@ TEST(IterativeFibTest, LargeInput)
    EXPECT_EQ(iterativeFib(40), 102334155);
 }
 
-// Test suite for iterativeFib
+// Test suite for tabulationFib
+TEST(tabulationFibTest, SmallInput)
+{
+   EXPECT_EQ(tabulationFib(0), 0);
+   EXPECT_EQ(tabulationFib(1), 1);
+}
+
+TEST(tabulationFibTest, MidInput)
+{
+   EXPECT_EQ(tabulationFib(10), 55);
+}
+
+TEST(tabulationFibTest, LargeInput)
+{
+   EXPECT_EQ(tabulationFib(40), 102334155);
+}
+
+// Lecture test
 TEST(LectureImplementation, SmallInput)
 {
    LectureMemoFib fib;
