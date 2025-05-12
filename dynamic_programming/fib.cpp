@@ -1,3 +1,4 @@
+#pragma once 
 #include <iostream>
 
 int recursiveFib(int n) {
@@ -17,11 +18,4 @@ int iterativeFib(int n) {
       c = a + b;
    }
    return c;
-}
-
-int main() {
-   std::cout << recursiveFib(6) << std::endl;
-   std::cout << iterativeFib(6) << std::endl;
-
-   return 0;
 }
