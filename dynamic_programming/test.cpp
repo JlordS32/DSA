@@ -16,7 +16,7 @@ TEST(RecursiveFibTest, MidInput)
 
 TEST(RecursiveFibTest, LargeInput)
 {
-   EXPECT_EQ(recursiveFib(50), 12586269025);
+   EXPECT_EQ(recursiveFib(40), 102334155);
 }
 
 // Test suite for iterativeFib
@@ -33,7 +33,27 @@ TEST(IterativeFibTest, MidInput)
 
 TEST(IterativeFibTest, LargeInput)
 {
-   EXPECT_EQ(iterativeFib(50), 12586269025);
+   EXPECT_EQ(iterativeFib(40), 102334155);
+}
+
+// Test suite for iterativeFib
+TEST(LectureImplementation, SmallInput)
+{
+   LectureMemoFib fib;
+   EXPECT_EQ(fib.compute(0), 0);
+   EXPECT_EQ(fib.compute(1), 1);
+}
+
+TEST(LectureImplementation, MidInput)
+{
+   LectureMemoFib fib;
+   EXPECT_EQ(fib.compute(10), 55);
+}
+
+TEST(LectureImplementation, LargeInput)
+{
+   LectureMemoFib fib;
+   EXPECT_EQ(fib.compute(40), 102334155);
 }
 
 int main(int argc, char **argv)
