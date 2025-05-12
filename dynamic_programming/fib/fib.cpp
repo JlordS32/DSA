@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
+#include <cstdint>
 
 uint64_t recursiveFib(uint64_t n)
 {

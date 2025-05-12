@@ -128,29 +128,29 @@ test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
-test.obj: test.cpp.obj
-.PHONY : test.obj
+fib/test.obj: fib/test.cpp.obj
+.PHONY : fib/test.obj
 
 # target to build an object file
-test.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/test.cpp.obj
-.PHONY : test.cpp.obj
+fib/test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/fib/test.cpp.obj
+.PHONY : fib/test.cpp.obj
 
-test.i: test.cpp.i
-.PHONY : test.i
+fib/test.i: fib/test.cpp.i
+.PHONY : fib/test.i
 
 # target to preprocess a source file
-test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/test.cpp.i
-.PHONY : test.cpp.i
+fib/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/fib/test.cpp.i
+.PHONY : fib/test.cpp.i
 
-test.s: test.cpp.s
-.PHONY : test.s
+fib/test.s: fib/test.cpp.s
+.PHONY : fib/test.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/test.cpp.s
-.PHONY : test.cpp.s
+fib/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/fib/test.cpp.s
+.PHONY : fib/test.cpp.s
 
 # Help Target
 help:
@@ -161,9 +161,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... test
-	@echo ... test.obj
-	@echo ... test.i
-	@echo ... test.s
+	@echo ... fib/test.obj
+	@echo ... fib/test.i
+	@echo ... fib/test.s
 .PHONY : help
 
 

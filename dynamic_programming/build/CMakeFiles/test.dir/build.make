@@ -71,29 +71,29 @@ include CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/codegen:
 .PHONY : CMakeFiles/test.dir/codegen
 
-CMakeFiles/test.dir/test.cpp.obj: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/test.cpp.obj: CMakeFiles/test.dir/includes_CXX.rsp
-CMakeFiles/test.dir/test.cpp.obj: C:/Users/jlord/OneDrive/Documents/Programming/DSA/dynamic_programming/test.cpp
-CMakeFiles/test.dir/test.cpp.obj: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\jlord\OneDrive\Documents\Programming\DSA\dynamic_programming\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/test.cpp.obj"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/test.cpp.obj -MF CMakeFiles\test.dir\test.cpp.obj.d -o CMakeFiles\test.dir\test.cpp.obj -c C:\Users\jlord\OneDrive\Documents\Programming\DSA\dynamic_programming\test.cpp
+CMakeFiles/test.dir/fib/test.cpp.obj: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/fib/test.cpp.obj: CMakeFiles/test.dir/includes_CXX.rsp
+CMakeFiles/test.dir/fib/test.cpp.obj: C:/Users/jlord/OneDrive/Documents/Programming/DSA/dynamic_programming/fib/test.cpp
+CMakeFiles/test.dir/fib/test.cpp.obj: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\jlord\OneDrive\Documents\Programming\DSA\dynamic_programming\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/fib/test.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/fib/test.cpp.obj -MF CMakeFiles\test.dir\fib\test.cpp.obj.d -o CMakeFiles\test.dir\fib\test.cpp.obj -c C:\Users\jlord\OneDrive\Documents\Programming\DSA\dynamic_programming\fib\test.cpp
 
-CMakeFiles/test.dir/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test.dir/test.cpp.i"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\jlord\OneDrive\Documents\Programming\DSA\dynamic_programming\test.cpp > CMakeFiles\test.dir\test.cpp.i
+CMakeFiles/test.dir/fib/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test.dir/fib/test.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\jlord\OneDrive\Documents\Programming\DSA\dynamic_programming\fib\test.cpp > CMakeFiles\test.dir\fib\test.cpp.i
 
-CMakeFiles/test.dir/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test.dir/test.cpp.s"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jlord\OneDrive\Documents\Programming\DSA\dynamic_programming\test.cpp -o CMakeFiles\test.dir\test.cpp.s
+CMakeFiles/test.dir/fib/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test.dir/fib/test.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jlord\OneDrive\Documents\Programming\DSA\dynamic_programming\fib\test.cpp -o CMakeFiles\test.dir\fib\test.cpp.s
 
 # Object files for target test
 test_OBJECTS = \
-"CMakeFiles/test.dir/test.cpp.obj"
+"CMakeFiles/test.dir/fib/test.cpp.obj"
 
 # External object files for target test
 test_EXTERNAL_OBJECTS =
 
-test.exe: CMakeFiles/test.dir/test.cpp.obj
+test.exe: CMakeFiles/test.dir/fib/test.cpp.obj
 test.exe: CMakeFiles/test.dir/build.make
 test.exe: CMakeFiles/test.dir/linkLibs.rsp
 test.exe: CMakeFiles/test.dir/objects1.rsp

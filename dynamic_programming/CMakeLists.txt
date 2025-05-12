@@ -10,7 +10,7 @@ link_directories("C:/gtest/googletest/build/lib")
 
 # add_executable([Name it however you want] <Main file here || main.cpp>)
 # Example:
-add_executable(test test.cpp)
+add_executable(test ./fib/test.cpp)
 
 # target_link_libraries([Same name as above] gtest gtest_main pthread)
 # Example:
